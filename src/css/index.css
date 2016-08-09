@@ -1,5 +1,7 @@
 *{margin:0; padding:0;}
 html,body{font-family:"Microsoft Yahei";}
+body{background:#eff3f5;}
+
 
 /*public start*/
 a{text-decoration:none;}
@@ -9,11 +11,11 @@ li{list-style:none;}
 
 
 
-.nav{width:100%;}
-.nav .nav-header{width:1180px; height:70px; margin:0 auto; background:#f1f1f1;}
+.nav{width:100%; background:#FFF;}
+.nav .nav-header{width:1180px; height:70px; margin:0 auto; }
 .nav .nav-header .nav-logo{float:left; display:inline-block; width:70px; height:70px;  line-height:70px; text-align:center; }
 .nav .nav-header .nav-logo>img{height:50px; margin-top:10px; text-align:center;}
 
 .nav .nav-header .nav-ul{float:left; height:70px; }
 .nav .nav-header .nav-ul>li{float:left; }
-.nav .nav-header .nav-ul>li>a{display:inline-block; padding:16px 0px 10px 0;}
+.nav .nav-header .nav-ul>li>a{display: block; width: 80px; height: 30px; padding: 16px 0 20px; font-size: 14px; color: #34495e; line-height: 30px; text-align: center;    border-top: 4px solid transparent;}
