@@ -24,7 +24,61 @@
             </ul>
         </header>
     </nav>
+
+	<section class="content">
+		 <div id="box">
+			<p><input type="text" id="txt" placeholder="请输入要搜索的内容"></p>
+			<ul id="list">
+			</ul>
+		</div>	
+	</section>
 <script>
+    var oText = document.querySelector("#txt");
+    var oList = document.querySelector("#list");
+
+    oText.onkeyup = function(){
+        var val = this.value;
+        var oS = document.createElement("script");
+        oS.src = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+val+"&cb=cheng";
+        document.body.appendChild(oS);
+        document.body.removeChild(oS);
+    };
+
+   /* function cheng(obj){
+        var data = obj.s;
+        var str = null;
+        for(var i = 0; i < data.length; i++){
+           str +="<li>"+data[i]+"</li>";
+        }
+        oList.innerHTML = str;
+    }*/
+
+    function cheng(obj){
+        var data = obj.s;
+        var str = "";
+        for(var i = 0; i < data.length; i++){
+            str +="<li><a href='https://www.baidu.com/s?wd="+data[i]+"' target='_blank'>"+data[i]+"</a></li>";
+        }
+        oList.innerHTML = str;
+    }
+
+    oList.onmouseover = function(ev){
+        ev = ev || event;
+        var target = ev.target || srcElement;
+        console.log(target.tagName+"==="+ev.currentTarget.tagName);
+        target.style.background = "#ccc";
+        target.style.color = "#FFF";
+    };
+
+    oList.onmouseout = function(ev){
+        ev = ev || event;
+        var target = ev.target || srcElement;
+        console.log(target.tagName+"==="+ev.currentTarget.tagName);
+        target.style.background = "";
+        target.style.color = "#333";
+    };
+    /*cheng({q:"呈",p:false,s:["呈贡","呈坎","呈坎住宿","呈贡招聘","呈味核苷酸二钠","呈现","呈报","呈阳性","呈送","呈批"]});*/
+
 
 </script>
 
